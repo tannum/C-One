@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_add_profile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhiteBackground"
+    tools:context="com.bjl.tannum.c_one.View.AddProfileActivity">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/addProfileView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/addProfileView"
+        android:background="@color/colorWhiteSmoke"
+        android:textSize="24dp"
+        android:padding="16dp"
+        android:text="Read data success"/>
+    android:text="AA1111111"/>
+    <Button
+        android:id="@+id/btnSaveProfile"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:textColor="@color/colorWhiteBackground"
+        android:textSize="34dp"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorSuccess"
+        android:text="SAVE"/>
+</RelativeLayout>
+

@@ -1,12 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.bjl.tannum.c_one.MainActivity">
+    android:background="@color/colorWhiteBackground"
+    tools:context="com.bjl.tannum.c_one.View.MainActivity">
 
-    <include android:id="@+id/app_bar"
+    <include
+        android:id="@+id/app_bar"
         layout="@layout/app_bar"/>
+    <ImageView
+        android:id="@+id/imgMainLogo"
+        android:layout_width="match_parent"
+        android:layout_height="258dp"
+        android:src="@drawable/main_logo3"/>
+    <TextView
+        android:id="@+id/txtHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imgMainLogo"
+        android:textSize="24dp"
+        android:layout_marginLeft="16dp"
+        android:text="Please identify yourself by :"/>
+
+    <ImageView
+        android:id="@+id/imgIconFingerprint"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/fingerprint"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_below="@+id/txtHeader" />
+
+    <TextView
+        android:id="@+id/txtDescFingerprint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:layout_alignTop="@+id/imgIconFingerprint"
+        android:layout_marginLeft="88dp"
+        android:text="your finger"/>
+
+    <ImageView
+        android:id="@+id/imgIconPassport"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/passport3"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_below="@+id/imgIconFingerprint" />
+
+    <TextView
+        android:id="@+id/txtDescPassport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:layout_alignTop="@+id/imgIconPassport"
+        android:layout_marginLeft="88dp"
+        android:text="your passport"/>
+
+    <ImageView
+        android:id="@+id/imgIconCard"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/card_id"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_below="@+id/imgIconPassport" />
+
+    <TextView
+        android:id="@+id/txtDescCitizenId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:layout_alignTop="@+id/imgIconCard"
+        android:layout_marginLeft="88dp"
+        android:text="your passport"/>
+
+    <!--<ImageView-->
+        <!--android:id="@+id/imgPassport"-->
+        <!--android:layout_width="128dp"-->
+        <!--android:layout_height="128dp"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:src="@drawable/passport"-->
+        <!--android:layout_below="@+id/imgFingerprint"-->
+        <!--android:layout_marginTop="28dp"/>-->
+
+    <!--<ImageView-->
+        <!--android:id="@+id/imgIdCard"-->
+        <!--android:layout_width="128dp"-->
+        <!--android:layout_height="128dp"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:src="@drawable/id_card1"-->
+        <!--android:layout_below="@+id/imgPassport"-->
+        <!--android:layout_marginTop="28dp"/>-->
 
 </RelativeLayout>

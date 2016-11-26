@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_verify"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhiteBackground"
+
+    tools:context="com.bjl.tannum.c_one.View.VerifyActivity">
+
+    <ImageView
+        android:id="@+id/imgProfile"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/mafia2"
+        android:scaleType="fitXY"
+        android:layout_centerHorizontal="true"/>
+
+    <!--Status -->
+    <TextView
+        android:id="@+id/txtStatus"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@id/imgProfile"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:background="@color/colorWarning"
+        android:textColor="@color/colorWhiteBackground"
+        android:textSize="26dp"
+        android:text="Tracking"/>
+
+    <!--Mask Citizen ID -->
+    <TextView
+        android:id="@+id/txtIdCard"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtStatus"
+        android:layout_marginTop="16dp"
+        android:gravity="right"
+        android:textColor="@color/colorAccent"
+        android:textSize="24dp"
+        android:text="ID CARD:"/>
+    <TextView
+        android:id="@+id/editTextIdCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/txtIdCard"
+        android:layout_marginLeft="128dp"
+        android:paddingLeft="10dp"
+        android:textColor="@color/colorAccent"
+        android:textSize="24dp"
+        android:text="3110156136686"/>
+
+    <!--Mask Name -->
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtIdCard"
+        android:layout_marginTop="16dp"
+        android:gravity="right"
+        android:textColor="@color/colorAccent"
+        android:textSize="24dp"
+        android:text="Name:"/>
+    <TextView
+        android:id="@+id/editTextName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/txtName"
+        android:layout_marginLeft="128dp"
+        android:paddingLeft="10dp"
+        android:textColor="@color/colorAccent"
+        android:textSize="24dp"
+        android:text="Somchai Jantaboon"/>
+
+    <!--Mask Address -->
+    <TextView
+        android:id="@+id/txtAddress"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtName"
+        android:layout_marginTop="16dp"
+        android:gravity="right"
+        android:textColor="@color/colorAccent"
+        android:textSize="24dp"
+        android:text="Address:"/>
+
+    <TextView
+        android:id="@+id/editTextAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/txtAddress"
+        android:layout_marginLeft="128dp"
+        android:paddingLeft="10dp"
+        android:textColor="@color/colorAccent"
+        android:textSize="24dp"
+        android:text="799/161 ,Tumbol Ranang , Amphor Moung , Yara Provide 10800"/>
+
+    <!--Mask Passport Number -->
+    <TextView
+        android:id="@+id/txtPassprtNumber"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextAddress"
+        android:layout_marginTop="16dp"
+        android:gravity="right"
+        android:textColor="@color/colorAccent"
+        android:textSize="24dp"
+        android:text="Passport:"/>
+    <TextView
+        android:id="@+id/editTextPassportNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/txtPassprtNumber"
+        android:layout_marginLeft="128dp"
+        android:paddingLeft="10dp"
+        android:textColor="@color/colorAccent"
+        android:textSize="24dp"
+        android:text="AA1111111"/>
+    <Button
+        android:id="@+id/btnEditProfile"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_above="@id/activity_main"
+        android:textColor="@color/colorWhiteBackground"
+        android:textSize="34dp"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorInfo"
+        android:text="EDIT"/>
+
+</RelativeLayout>
