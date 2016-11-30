@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#DADADA"
     tools:context="com.bjl.tannum.c_one.Model.Fragment.NavigationDrawerFragment">
 
     <LinearLayout
@@ -14,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="140dp"
             android:scaleType="fitXY"
-            android:src="@drawable/navigation_banner1"
+            android:src="@drawable/card_id"
             android:layout_marginBottom="30dp"/>
     </LinearLayout>
 
