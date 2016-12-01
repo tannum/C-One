@@ -13,37 +13,7 @@
         android:layout_height="300dp"
         android:scaleType="fitXY"
         android:src="@drawable/login_logo"/>
-     <EditText
-         android:id="@+id/editTextUserName"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:layout_marginLeft="16dp"
-         android:layout_marginRight="16dp"
-         android:layout_marginTop="16dp"
-         android:layout_below="@id/imgLoginLogo"
-         android:hint="Please input your user name" />
-    <EditText
-        android:id="@+id/editTextPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_below="@id/editTextUserName"
-        android:inputType="numberPassword"
-        android:hint="Please input your password" />
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_below="@id/editTextPassword"
-        android:background="@color/colorSuccess"
-        android:textSize="24dp"
-        android:text="LOGIN"
-        android:textColor="@color/colorWhiteBackground"/>
+
     <Button
         android:id="@+id/btnRegister"
         android:layout_width="match_parent"
@@ -51,9 +21,46 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="16dp"
-        android:layout_below="@id/btnLogin"
+        android:layout_marginBottom="16dp"
+        android:layout_alignParentBottom="true"
         android:background="@color/colorInfo"
         android:textSize="24dp"
         android:text="REGISTER"
         android:textColor="@color/colorWhiteBackground"/>
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_above="@id/btnRegister"
+        android:background="@color/colorSuccess"
+        android:textSize="24dp"
+        android:text="LOGIN"
+        android:textColor="@color/colorWhiteBackground"/>
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_above="@id/btnLogin"
+        android:inputType="numberPassword"
+        android:maxLength="6"
+        android:hint="Please input your password" />
+     <EditText
+         android:id="@+id/editTextUserName"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginLeft="16dp"
+         android:layout_marginRight="16dp"
+         android:layout_marginTop="16dp"
+         android:layout_above="@id/editTextPassword"
+         android:inputType="textEmailAddress"
+         android:hint="Please input your user name" />
+
+
+
 </RelativeLayout>
