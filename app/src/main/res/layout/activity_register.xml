@@ -6,4 +6,72 @@
     android:layout_height="match_parent"
     tools:context="com.bjl.tannum.c_one.View.RegisterActivity">
 
+    <ImageView
+        android:id="@+id/register_pic"
+        android:layout_width="108dp"
+        android:layout_height="108dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/no_pic1"
+        android:layout_marginTop="16dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="16dp"/>
+
+    <EditText
+        android:id="@+id/register_id"
+        android:inputType="number"
+        android:maxLength="13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/register_pic"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:hint="Your ID"/>
+    <EditText
+        android:id="@+id/register_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/register_id"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:hint="Youre Name"
+        />
+    <EditText
+        android:id="@+id/register_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/register_name"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:hint="Youre Email"
+        />
+
+    <EditText
+        android:id="@+id/register_password"
+        android:inputType="numberPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/register_email"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:hint="Youre Password"
+        />
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorInfo"
+        android:textSize="24dp"
+        android:text="REGISTER"
+        android:textColor="@color/colorWhiteBackground"/>
+
 </RelativeLayout>

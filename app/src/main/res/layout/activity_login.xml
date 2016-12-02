@@ -15,7 +15,7 @@
         android:src="@drawable/login_logo"/>
 
     <Button
-        android:id="@+id/btnRegister"
+        android:id="@+id/btnSignUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
@@ -25,7 +25,7 @@
         android:layout_alignParentBottom="true"
         android:background="@color/colorInfo"
         android:textSize="24dp"
-        android:text="REGISTER"
+        android:text="SIGNUP"
         android:textColor="@color/colorWhiteBackground"/>
     <Button
         android:id="@+id/btnLogin"
@@ -34,7 +34,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="16dp"
-        android:layout_above="@id/btnRegister"
+        android:layout_above="@id/btnSignUp"
         android:background="@color/colorSuccess"
         android:textSize="24dp"
         android:text="LOGIN"
@@ -44,12 +44,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginRight="200dp"
         android:layout_marginTop="16dp"
         android:layout_above="@id/btnLogin"
         android:inputType="numberPassword"
         android:maxLength="6"
-        android:hint="Please input your password" />
+        android:hint="Your password" />
+    <Button
+        android:id="@+id/btnForgotPwd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/editTextPassword"
+        android:layout_marginRight="16dp"
+        android:layout_alignParentEnd="true"
+        android:text="forgot?" />
      <EditText
          android:id="@+id/editTextUserName"
          android:layout_width="match_parent"
@@ -59,7 +67,7 @@
          android:layout_marginTop="16dp"
          android:layout_above="@id/editTextPassword"
          android:inputType="textEmailAddress"
-         android:hint="Please input your user name" />
+         android:hint="Your user name" />
 
 
 
