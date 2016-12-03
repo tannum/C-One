@@ -1,5 +1,6 @@
 package com.bjl.tannum.c_one.View;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,6 +26,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         btnLogin.setOnClickListener(this);
         btnSignup.setOnClickListener(this);
 
+
     }
 
 
@@ -32,12 +34,18 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         if(view == btnForgot){
             Log.d("debug","btn forgot was clicked");
+            Intent intent = new Intent(LoginActivity.this,ResetPasswordActivity.class);
+            startActivity(intent);
         }
         else if(view == btnLogin){
             Log.d("debug","btn login was clicked");
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(intent);
         }
         else if(view == btnSignup){
             Log.d("debug","btn signup was clicked");
+            Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+            startActivity(intent);
         }
 
 

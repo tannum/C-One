@@ -11,8 +11,8 @@
         android:id="@+id/imgLoginLogo"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/login_logo"/>
+        android:scaleType="center"
+        android:src="@drawable/login_logo1"/>
 
     <Button
         android:id="@+id/btnSignUp"
@@ -49,7 +49,8 @@
         android:layout_above="@id/btnLogin"
         android:inputType="numberPassword"
         android:maxLength="6"
-        android:hint="Your password" />
+        android:hint="Your password"
+        android:textColorHint="@color/colorHint"/>
     <Button
         android:id="@+id/btnForgotPwd"
         android:layout_width="wrap_content"
@@ -57,7 +58,8 @@
         android:layout_alignBaseline="@+id/editTextPassword"
         android:layout_marginRight="16dp"
         android:layout_alignParentEnd="true"
-        android:text="forgot?" />
+        android:text="forgot?"
+        android:background="@color/colorWhiteBackground"/>
      <EditText
          android:id="@+id/editTextUserName"
          android:layout_width="match_parent"
@@ -67,7 +69,8 @@
          android:layout_marginTop="16dp"
          android:layout_above="@id/editTextPassword"
          android:inputType="textEmailAddress"
-         android:hint="Your user name" />
+         android:hint="Your user name"
+         android:textColorHint="@color/colorHint"/>
 
 
 
