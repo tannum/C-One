@@ -13,15 +13,20 @@
         android:background="@drawable/nav_logo1"
         android:orientation="horizontal">
 
-        <ImageView
+        <com.mikhaellopez.circularimageview.CircularImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/nav_profile_img"
             android:layout_width="108dp"
             android:layout_height="108dp"
-            android:scaleType="fitXY"
             android:src="@drawable/no_pic1"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="28dp"
-            android:layout_marginLeft="28dp"/>
+            android:layout_marginLeft="28dp"
+            app:civ_border_color="@color/colorWhiteSmoke"
+            app:civ_border_width="0dp"/>
+
+
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

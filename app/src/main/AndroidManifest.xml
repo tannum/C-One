@@ -2,7 +2,27 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bjl.tannum.c_one">
 
+    <!-- Accessing camera hardware -->
+    <uses-feature android:name="android.hardware.camera" />
+    <!-- Accessing Internet -->
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Accessing GPS hardware -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- Accessing External Storage  -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!-- Accessing Finger print  -->
+    <uses-permission
+        android:name="android.permission.USE_FINGERPRINT" />
+
+
+
+
 
     <application
         android:allowBackup="true"

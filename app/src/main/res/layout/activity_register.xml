@@ -6,27 +6,32 @@
     android:layout_height="match_parent"
     tools:context="com.bjl.tannum.c_one.View.RegisterActivity">
 
-    <ImageView
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/register_pic"
-        android:layout_width="108dp"
-        android:layout_height="108dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/no_pic1"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/mafia2"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="16dp"/>
+        app:civ_border_color="@color/colorWhiteSmoke"
+        app:civ_border_width="0dp"/>
+
 
     <EditText
         android:id="@+id/register_id"
         android:inputType="number"
         android:maxLength="13"
+        android:textSize="24dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/register_pic"
         android:layout_marginTop="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:hint="Your ID"/>
+        android:hint="Your ID"
+        android:textColorHint="@color/colorHint"/>
     <EditText
         android:id="@+id/register_name"
         android:layout_width="match_parent"
@@ -35,8 +40,9 @@
         android:layout_marginTop="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:hint="Youre Name"
-        />
+        android:textSize="24dp"
+        android:hint="Your Name"
+        android:textColorHint="@color/colorHint" />
     <EditText
         android:id="@+id/register_email"
         android:layout_width="match_parent"
@@ -45,8 +51,9 @@
         android:layout_marginTop="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:hint="Youre Email"
-        />
+        android:textSize="24dp"
+        android:hint="Your Email"
+        android:textColorHint="@color/colorHint" />
 
     <EditText
         android:id="@+id/register_password"
@@ -57,8 +64,9 @@
         android:layout_marginTop="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:hint="Youre Password"
-        />
+        android:textSize="24dp"
+        android:hint="Your Password"
+        android:textColorHint="@color/colorHint" />
 
     <Button
         android:id="@+id/btnRegister"

@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
+import com.bjl.tannum.c_one.Model.Library.GPSTracker;
 import com.bjl.tannum.c_one.R;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
@@ -14,6 +16,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     Button btnForgot;
     Button btnLogin;
     Button btnSignup;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +29,23 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         btnForgot.setOnClickListener(this);
         btnLogin.setOnClickListener(this);
         btnSignup.setOnClickListener(this);
+
+        GPSTracker gps;
+        //Mask: initial gps and check location service
+        gps = new GPSTracker(this);
+        if(gps.canGetLocation() == false){
+            gps.showSettingsAlert();
+        }
+        else
+        {
+            double lad = gps.getLatitude();
+            double lon = gps.getLongitude();
+            double aa = 10.000;
+            Toast.makeText(getApplicationContext(),"support gps = " + String.valueOf(aa) + " " + String.valueOf(lon)  ,Toast.LENGTH_LONG).show();
+
+
+        }
+
 
 
     }
