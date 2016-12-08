@@ -17,7 +17,7 @@ import java.util.List;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DBNAME = "MyProduct.db";
-    public static final String DBLOCATION = "/data/data/com.bjl.tannum.c_one.Database/databases";
+    public static final String DBLOCATION = "/data/data/com.bjl.tannum.c_one.Database/databases/";
     private Context mContext;
     private SQLiteDatabase mDatabase;
 
@@ -56,7 +56,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ProductInfo productInfo = null;
         List<ProductInfo> productInfos = new ArrayList<>();
         openDatabase();
-        Cursor cursor = mDatabase.rawQuery("SELECT * FROM PRODUCT",null);
+        Cursor cursor = mDatabase.rawQuery("SELECT * FROM Product",null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()){
             productInfo = new ProductInfo(cursor.getInt(0),cursor.getString(1),cursor.getInt(2),cursor.getString(3));
