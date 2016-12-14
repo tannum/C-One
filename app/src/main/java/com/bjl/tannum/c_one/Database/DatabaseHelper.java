@@ -16,8 +16,8 @@ import java.util.List;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    public static final String DBNAME = "MyProduct.db";
-    public static final String DBLOCATION = "/data/data/com.bjl.tannum.c_one.Database/databases/";
+    public static final String DBNAME = "C_ONE.db";
+    public static final String DBLOCATION = "/data/data/com.bjl.tannum.c_one/databases/";
     private Context mContext;
     private SQLiteDatabase mDatabase;
 

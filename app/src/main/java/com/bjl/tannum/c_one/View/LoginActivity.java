@@ -54,24 +54,38 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         btnLogin.setOnClickListener(this);
         btnSignup.setOnClickListener(this);
 
-
+        Log.d("debug","start login activity");
 
         //Mask: Database setting
         mDBHelper = new DatabaseHelper(this);
+
+
+        //String dbPath = getDatabasePath(DatabaseHelper.DBNAME).getPath();
+        //Log.d("debug","database path = " + dbPath);
+
         //Check exists database
         File database = getApplicationContext().getDatabasePath(DatabaseHelper.DBNAME);
-        if(false == database.exists()){
+        if(database.exists() == false ){
+
+            Log.d("debug","database not exist -> get readable database and copy database");
             mDBHelper.getReadableDatabase();
+
             //Copy db
             if(copyDatabase(this)){
-                Toast.makeText(this,"Copy database success",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this,"Copy database success",Toast.LENGTH_SHORT).show();
+                Log.d("debug","Copy database success");
             }
             else{
-                Toast.makeText(this,"Copy database error",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this,"Copy database error",Toast.LENGTH_SHORT).show();
+                Log.d("debug","Coppy datablse error");
             }
 
             //Get product list in db when db exists
-            mProductList = mDBHelper.getListProduct();
+            //mProductList = mDBHelper.getListProduct();
+        }
+        else
+        {
+            Log.d("debug", "Database exist");
         }
         //Get product list in db when db exists
       //  mProductList = mDBHelper.getListProduct();
