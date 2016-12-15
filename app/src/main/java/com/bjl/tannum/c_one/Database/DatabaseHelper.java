@@ -18,6 +18,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DBNAME = "C_ONE.db";
     public static final String DBLOCATION = "/data/data/com.bjl.tannum.c_one/databases/";
+
+    //tb_login_info
+    //public static final String tb_login_info = "tb_login_info";
+
+
+
+
+
     private Context mContext;
     private SQLiteDatabase mDatabase;
 
@@ -35,7 +43,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
     }
 
     public void openDatabase(){
@@ -51,6 +58,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             mDatabase.close();
         }
     }
+
+
+    public Cursor SqlSelect(String sql){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery(sql,null);
+        return  res;
+    }
+
 
     public List<ProductInfo> getListProduct(){
         ProductInfo productInfo = null;

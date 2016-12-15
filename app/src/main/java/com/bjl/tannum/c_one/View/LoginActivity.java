@@ -3,6 +3,8 @@ package com.bjl.tannum.c_one.View;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -35,15 +37,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private List<ProductInfo> mProductList;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
+        Log.d("debug","start login activity");
         //Mask: Init SharePreferences
         sharedPreferences = getSharedPreferences("USERINFO",MODE_PRIVATE).edit();
-
-
         //Mask: Init Component
         btnForgot = (Button) findViewById(R.id.btnForgotPwd);
         btnLogin = (Button)findViewById(R.id.btnLogin);
@@ -53,17 +56,21 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         btnForgot.setOnClickListener(this);
         btnLogin.setOnClickListener(this);
         btnSignup.setOnClickListener(this);
-
-        Log.d("debug","start login activity");
-
         //Mask: Database setting
         mDBHelper = new DatabaseHelper(this);
 
 
-        //String dbPath = getDatabasePath(DatabaseHelper.DBNAME).getPath();
-        //Log.d("debug","database path = " + dbPath);
+        //Get product list in db when db exists
+        //mProductList = mDBHelper.getListProduct();
+        //Get product list in db when db exists
+      //  mProductList = mDBHelper.getListProduct();
+       // int jj = 1;
 
-        //Check exists database
+    }
+
+    private void InitDB(){
+
+        //Mask: Check exists database
         File database = getApplicationContext().getDatabasePath(DatabaseHelper.DBNAME);
         if(database.exists() == false ){
 
@@ -72,26 +79,18 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
             //Copy db
             if(copyDatabase(this)){
-                //Toast.makeText(this,"Copy database success",Toast.LENGTH_SHORT).show();
                 Log.d("debug","Copy database success");
             }
             else{
-                //Toast.makeText(this,"Copy database error",Toast.LENGTH_SHORT).show();
                 Log.d("debug","Coppy datablse error");
             }
-
-            //Get product list in db when db exists
-            //mProductList = mDBHelper.getListProduct();
         }
         else
         {
             Log.d("debug", "Database exist");
         }
-        //Get product list in db when db exists
-      //  mProductList = mDBHelper.getListProduct();
-       // int jj = 1;
-
     }
+
 
     private boolean copyDatabase(Context context) {
         try {
@@ -124,16 +123,23 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
         else if(view == btnLogin){
             Log.d("debug","btn login was clicked");
-            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-            startActivity(intent);
+            boolean result = LoginHandler();
+            if(result == true){
+                Log.d("debug","Login Success+++");
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+            else
+            {
+                Log.d("debug","Login Error---");
+            }
+
         }
         else if(view == btnSignup){
             Log.d("debug","btn signup was clicked");
             Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
             startActivity(intent);
         }
-
-
     }
 
 
@@ -144,8 +150,27 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         String userName;
         String password;
 
+
         userName = editTextUserName.getText().toString();
         password = editTextPassword.getText().toString();
+        //Mask: check user exist.
+        Cursor res = mDBHelper.SqlSelect("select * from user_login where user_name = "+"'"+userName+"' and active = 1");
+        if(res.getCount() == 0){
+            //no user -> verify user with server
+            userId = 1;
+            result = true;
+        }
+        else {
+            //have user
+
+        }
+
+
+
+
+
+
+
 
         //Mask: Network Authentication
         //...
@@ -156,10 +181,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         result  = true;
 
         if(result == true){
-            //Mask: commit shared user data
-            sharedPreferences.putString("user_id",String.valueOf(userId));
-            sharedPreferences.putString("user_name",userName);
-            sharedPreferences.commit();
+//            //Mask: commit shared user data
+//            sharedPreferences.putString("user_id",String.valueOf(userId));
+//            sharedPreferences.putString("user_name",userName);
+//            sharedPreferences.commit();
+
 
         }
 
