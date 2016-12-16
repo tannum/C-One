@@ -22,7 +22,9 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.nio.IntBuffer;
 import java.util.List;
+import java.util.Random;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -58,6 +60,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         btnSignup.setOnClickListener(this);
         //Mask: Database setting
         mDBHelper = new DatabaseHelper(this);
+        InitDB();
 
 
         //Get product list in db when db exists
@@ -142,53 +145,51 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
     }
 
-
+    //int UserId = 0;
     private boolean LoginHandler(){
 
         boolean result;
-        int userId;
+        Random r = new Random();
+        int UserId = r.nextInt();
+
         String userName;
         String password;
 
-
+        Log.d("debug","LoginHandler");
         userName = editTextUserName.getText().toString();
         password = editTextPassword.getText().toString();
+        result = false;
         //Mask: check user exist.
-        Cursor res = mDBHelper.SqlSelect("select * from user_login where user_name = "+"'"+userName+"' and active = 1");
+        Cursor res = mDBHelper.SqlSelect("select * from user_login where user_name = "+"'"+userName+"'");
         if(res.getCount() == 0){
-            //no user -> verify user with server
-            userId = 1;
+            Log.d("debug","No user in database : verify user with server");
+            //Mask: no user -> verify user with server
             result = true;
+
+            //Mask: Save user to tb_login_info
+            boolean result1 = mDBHelper.InsertData_tbLoginInfo(UserId++,userName,1);
+            Log.d("debug","insert data = " + String.valueOf(result1));
+
         }
         else {
+            result = true;
+            Log.d("debug", "Have user in database : update status");
             //have user
+            if (res.moveToNext() == true) {
 
+                //Mask: Get data from database
+                int user_active = res.getInt(2);
+                UserId = res.getInt(0);
+                //Mask: update data if user status = 0
+                Log.d("debug", "user active = " + user_active);
+                if (user_active != 1) {
+                    Log.d("debug", "user not active -> update user status");
+                    //Mask: Udate user status = 1
+                    boolean result1 = mDBHelper.UpdateData_tbLoginInfo(UserId, userName, 1);
+                    Log.d("debug", "update data = " + String.valueOf(result1));
+                }
+            }
         }
-
-
-
-
-
-
-
-
-        //Mask: Network Authentication
-        //...
-
-
-        //Mask: Manual fill result
-        userId =1;
-        result  = true;
-
-        if(result == true){
-//            //Mask: commit shared user data
-//            sharedPreferences.putString("user_id",String.valueOf(userId));
-//            sharedPreferences.putString("user_name",userName);
-//            sharedPreferences.commit();
-
-
-        }
-
         return result;
 
     }

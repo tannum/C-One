@@ -1,5 +1,6 @@
 package com.bjl.tannum.c_one.Database;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -18,6 +19,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DBNAME = "C_ONE.db";
     public static final String DBLOCATION = "/data/data/com.bjl.tannum.c_one/databases/";
+
+    public static final String tb_user_login = "user_login";
+    public static final String col_id   = "id";
+    public static final String col_username = "user_name";
+    public static final String col_active = "active";
+
 
     //tb_login_info
     //public static final String tb_login_info = "tb_login_info";
@@ -65,6 +72,31 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor res = db.rawQuery(sql,null);
         return  res;
     }
+
+
+    public boolean InsertData_tbLoginInfo(int id , String username , int active ){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(col_id,id);
+        contentValues.put(col_username,username);
+        contentValues.put(col_active,active);
+        long result = db.insert(tb_user_login,null,contentValues);
+        if(result == (-1)){
+            return false;
+        }
+        return true;
+    }
+
+    public boolean UpdateData_tbLoginInfo(int id , String user_name , int active){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(col_id,id);
+        contentValues.put(col_username,user_name);
+        contentValues.put(col_active,active);
+        db.update(tb_user_login,contentValues,"id = ?",new String[]{String.valueOf(id)});
+        return true;
+    }
+
 
 
     public List<ProductInfo> getListProduct(){

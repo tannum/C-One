@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:scaleType="center"
-        android:src="@drawable/login_logo1"/>
+        android:src="@drawable/id_card"/>
 
     <Button
         android:id="@+id/btnSignUp"
